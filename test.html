@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+    <h1 class="color" id="title">
+        한글은 아름다운 글입니다.
+    </h1>
+
+
+    <script src="script/jquery-3.7.1.js"></script>
+    <script>
+        // document.addEventListener('DomContentLoaded', ()=>{})
+        // jQuery 화살표 함수를 사용하지 마세요.
+        $();// 즉시 실행하세요.
+
+        $(function(){
+
+        })
+
+        // $('h1').css('color','skyblue');
+        // $('#title').css('font-size','40px');
+        // $('.color').css('backgroundColor','black');
+
+        // 체이닝 기법
+        // $('h1').css('color','skyblue').css('font-size','40px').css('backgroundColor','black');
+
+        $('h1').css({
+            'color' : 'black',
+            'font-size' : '40px',
+            'backgroundColor' : 'skyblue'
+        })
+
+        
+    </script>
+    <!-- 
+        선택자 : $('css 모든 선택자') 
+        
+    -->
+</body>
+</html>

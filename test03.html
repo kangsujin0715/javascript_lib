@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+    <h1 class="color" id="title">
+        한글은 아름다운 글입니다.
+    </h1>
+
+
+    <script src="script/jquery-3.7.1.js"></script>
+    <script>
+        $('h1').text('<u>텍스트 추가</u>'); // 태그를 넣어도 텍스트로 출력
+        $('.color').html('<i> 이텔릭 </i>'); // 태그 실행 가능
+        
+        $('.color').append('append');
+        $('.color').append('<span>text02</span>');
+
+        $('.color').append('<u>text03</u>'); // 태그 실행 가능
+        $('.color').prepend('<u>text04</u>'); // 앞에 추가
+        $('.color').before('<u>before</u>'); // .color 태그 밖 앞에 들어감
+        $('.color').after('<u>after</u>'); // .color 태그 밖 뒤에 들어감
+    </script>
+    <!-- 
+        선택자 : $('css 모든 선택자') 
+        style 디자인 : css ({'속성' : '값', ...})
+
+        .innerHtml               .html()
+        .innerText       =>      .text()
+        .textContent             .text()
+
+
+        .append()        =>      .append()
+        .appendChild()
+
+        js
+        .insertAdjacentElement('afterend | afterstart | beforend | beforestart', 요소 추가)
+
+        ('.color').append('<u>text03</u>'); // 태그 실행 가능
+        $('.color').prepend('<u>text04</u>'); // 앞에 추가
+        $('.color').before('<u>before</u>'); // .color 태그 밖 앞에 들어감
+        $('.color').after('<u>after</u>'); // .color 태그 밖 뒤에 들어감
+    -->
+</body>
+</html>
