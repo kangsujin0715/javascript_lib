@@ -50,7 +50,7 @@
   <body>
     <div id="tabs">
       <ul id="tab_lists">
-        <li class="active"><a href="#tabs-1">Nunc tincidunt</a></li>
+        <li><a href="#tabs-1">Nunc tincidunt</a></li>
         <li><a href="#tabs-2">Proin dolor</a></li>
         <li><a href="#tabs-3">Aenean lacinia</a></li>
       </ul>
@@ -112,17 +112,33 @@
       // $('#tab_lists>li>a').on('click',function(){
       //   console.log('a', $(this).index())
       // })
-      $('#tab_contents>div').css('opacity', 0);
-      $('#tab_contents>div').eq(0).css('opacity', 1);
-      $('#tab_lists>li').on('click',function(e){
+
+      //초기화 하는 함수
+        function init(num){
+            showcontent(num);
+            btnActiveHandle(num);
+        }
+        init(num);
+
+        function showcontent(num){
+            $('#tab_contents>div').css({'opacity': 0, 'transition': '1s'});
+            $('#tab_contents>div').eq(num).css('opacity', 1);
+        }
+        showcontent(0);
+
+        function btnActiveHandle(num){
+            $('#tab_lists>li').removeClass('active');
+            $('#tab_lists>li').eq(num).addClass('active');
+        }
+        btnActiveHandle(0);
+
+      $('#tab_lists>li').on('click', function(e){
         e.preventDefault();
-        $('#tab_contents>div').removeClass('active');
-        $(this).addClass('active');
-        console.log('li : ', $(this).index());
-        $('#tab_contents>div').css('opacity', 0);
+
         const num = $(this).index();
-        $('#tab_contents>div').eq(num).css('opacity', 1);
-      })
+        btnActiveHandle(num);
+        showcontent(num);
+      });
     </script>
   </body>
 </html>
